@@ -1,11 +1,297 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>E-commerce Product Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            height: 100%; /* Ensure cards in a row have equal height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: 200px; /* Fixed height for images */
+            object-fit: contain; /* Ensure image fits without distortion */
+            margin-bottom: 10px;
+        }
+        .sidebar {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            height: 100vh; /* Full height sidebar */
+            position: sticky;
+            top: 0;
+        }
+        .price-range-inputs {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
 <body>
-    
-</body>
-</html>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <h5>Filtros</h5>
+                <div class="mb-3">
+                    <label for="minPrice" class="form-label">Preço Mínimo</label>
+                    <input type="number" class="form-control" id="minPrice" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="maxPrice" class="form-label">Preço Máximo</label>
+                    <input type="number" class="form-control" id="maxPrice" value="100">
+                </div>
+                <div class="mb-3">
+                    <label for="productType" class="form-label">Tipo de Produto</label>
+                    <select class="form-select" id="productType">
+                        <option selected="">Todos</option>
+                        <option>Limpeza</option>
+                        <option>Roupas</option>
+                        <option>Acessórios</option>
+                        <option>Casa</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="brand" class="form-label">Marca</label>
+                    <input type="text" class="form-control" id="brand" placeholder="Digite a marca (EcoClean, EcoWear ou EcoTools)">
+                </div>
+                <button class="btn btn-primary" id="applyFiltersBtn">Aplicar Filtros</button>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <h1>Nossos Produtos</h1>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="productGrid"><div class="Sabonete artesanal">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/150/0000FF/FFFFFF?text=Sabonete" class="card-img-top" alt="Sabonete artesanal">
+                        <div class="card-body">
+                            <h5 class="card-title">Sabonete artesanal</h5>
+                            <p class="card-text">R$ 15.00</p>
+                            <button href="btn btn-primary add-to-cart" data-product-id="1">Saiba mais</button>
+                           
+                        </div>
+                    </div>
+                </div><div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/150/FF0000/FFFFFF?text=Camiseta" class="card-img-top" alt="Camiseta Algodão">
+                        <div class="card-body">
+                            <h5 class="card-title">Camiseta Algodão</h5>
+                            <p class="card-text">R$ 80.00</p>
+                            <button class="btn btn-primary add-to-cart" data-product-id="2">Saiba mais</button>
+                        </div>
+                    </div>
+                </div><div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/150/00FF00/FFFFFF?text=Talheres" class="card-img-top" alt="Talheres">
+                        <div class="card-body">
+                            <h5 class="card-title">Talheres de bambu</h5>
+                            <p class="card-text">R$ 15.00</p>
+                            <button class="btn btn-primary add-to-cart" data-product-id="3">Saiba mais</button>
+                        </div>
+                    </div>
+                </div><div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/150/FFFF00/000000?text=Ecobag" class="card-img-top" alt="Ecobag">
+                        <div class="card-body">
+                            <h5 class="card-title">Ecobag</h5>
+                            <p class="card-text">R$ 10.00</p>
+                            <button class="btn btn-primary add-to-cart" data-product-id="4">Saiba mais</button>
+                        </div>
+                    </div>
+                </div><div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/150/00FFFF/000000?text=Fralda" class="card-img-top" alt="Fralda Ecológica">
+                        <div class="card-body">
+                            <h5 class="card-title">Fralda Ecológica</h5>
+                            <p class="card-text">R$ 30.00</p>
+                            <button class="btn btn-primary add-to-cart" data-product-id="5">Saiba mais</button>
+                        </div>
+                    </div>
+                </div><div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/150/FFD700/000000?text=Lava louças" class="card-img-top" alt="Lava Louças">
+                        <div class="card-body">
+                            <h5 class="card-title">Lava Louças</h5>
+                            <p class="card-text">R$ 60.00</p>
+                            <button class="btn btn-primary add-to-cart" data-product-id="6">Saiba mais</button>
+                        </div>
+                    </div>
+                </div><div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/150/8A2BE2/FFFFFF?text=Bolsa" class="card-img-top" alt="Bolsa Térmica">
+                        <div class="card-body">
+                            <h5 class="card-title">Bolsa Térmica</h5>
+                            <p class="card-text">R$ 50.00</p>
+                            <button class="btn btn-primary add-to-cart" data-product-id="7">Saiba mais</button>
+                        </div>
+                    </div>
+                </div><div class="col">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/150/008080/FFFFFF?text=Canudos" class="card-img-top" alt="Canudos reutilizavéis">
+                        <div class="card-body">
+                            <h5 class="card-title">Canudos</h5>
+                            <p class="card-text">R$ 40.00</p>
+                            <button class="btn btn-primary add-to-cart" data-product-id="8">Saiba mais</button>
+                        </div>
+                    </div>
+                </div></div>
+            </main>
+        
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Sabonete artesanal",
+                price: 20.00,
+                type: "Limpeza",
+                brand: "EcoClean",
+                image: "../assets/imgs/sabonetee.webp"
+            },
+            {
+                id: 2,
+                name: "Camiseta Algodão",
+                price: 80.00,
+                type: "Roupas",
+                brand: "EcoWear",
+                image: "../assets/imgs/camis.webp"
+            },
+            {
+                id: 3,
+                name: "Talheres de bambu",
+                price: 15.00,
+                type: "Casa",
+                brand: "EcoTools",
+                image: "../assets/imgs/bambu.png"
+            },
+            {
+                id: 4,
+                name: "Sacola ecológica",
+                price: 10.00,
+                type: "Acessórios",
+                brand: "EcoWear",
+                image: "../assets/imgs/sacola.webp"
+            },
+            {
+                id: 5,
+                name: "Fralda ecológica",
+                price: 30.00,
+                type: "Roupas",
+                brand: "EcoWear",
+                image: "../assets/imgs/fraldaa.png"
+            },
+            {
+                id: 6,
+                name: "Lava Louças ecológico",
+                price: 60.00,
+                type: "Casa",
+                brand: "EcoClean",
+                image: "../assets/imgs/lavalouça.png"
+            },
+            {
+                id: 7,
+                name: "Bolsa térmica ecológica",
+                price: 50.00,
+                type: "Acessórios",
+                brand: "EcoWear",
+                image: "../assets/imgs/bolsatérmicaecológica.png"
+            },
+            {
+                id: 8,
+                name: "Canudos reutilizavéis",
+                price: 40.00,
+                type: "Casa",
+                brand: "EcoTools",
+                image: "../assets/imgs/canudo.png"
+            }
+        ];
+
+        const productGrid = document.getElementById("productGrid");
+        const minPriceInput = document.getElementById("minPrice");
+        const maxPriceInput = document.getElementById("maxPrice");
+        const productTypeSelect = document.getElementById("productType");
+        const brandInput = document.getElementById("brand");
+        const applyFiltersBtn = document.getElementById("applyFiltersBtn");
+
+        function renderProducts(filteredProducts) {
+            productGrid.innerHTML = "";
+            if (filteredProducts.length === 0) {
+                productGrid.innerHTML = "<p>Nenhum produto encontrado com os filtros aplicados.</p>";
+                return;
+            }
+            filteredProducts.forEach(product => {
+                const col = document.createElement("div");
+                col.className = "col";
+                col.innerHTML = `
+                    <div class="card product-card">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text">R$ ${product.price.toFixed(2)}</p>
+                            <button class="btn btn-primary add-to-cart" data-product-id="${product.id}">Saiba mais</button>
+                        </div>
+                    </div>
+                `;
+                productGrid.appendChild(col);
+            });
+
+          //  // Adicionar funcionalidade ao botão "Saiba mais"
+          //  document.querySelectorAll(".add-to-cart").forEach(button => {
+          //      button.addEventListener("click", (event) => {
+          //          const productId = event.target.dataset.productId;
+          //          const product = products.find(p => p.id == productId);
+          //          alert(`Redirecionando ao site: ${product.name} (R$ ${product.price.toFixed(2)})`);
+          //      });
+          //  });
+        }
+
+        function applyFilters() {
+            let filtered = products;
+
+            const minPrice = parseFloat(minPriceInput.value);
+            const maxPrice = parseFloat(maxPriceInput.value);
+            
+            if (!isNaN(minPrice)) {
+                filtered = filtered.filter(product => product.price >= minPrice);
+            }
+            if (!isNaN(maxPrice)) {
+                filtered = filtered.filter(product => product.price <= maxPrice);
+            }
+
+            const selectedType = productTypeSelect.value;
+            if (selectedType !== "Todos") {
+                filtered = filtered.filter(product => product.type === selectedType);
+            }
+
+            const searchBrand = brandInput.value.toLowerCase();
+            if (searchBrand) {
+                filtered = filtered.filter(product => product.brand.toLowerCase().includes(searchBrand));
+            }
+
+            renderProducts(filtered);
+        }
+
+        // Initial render
+        renderProducts(products);
+
+        // Event listeners for filters
+        applyFiltersBtn.addEventListener("click", applyFilters);
+        minPriceInput.addEventListener("input", applyFilters);
+        maxPriceInput.addEventListener("input", applyFilters);
+        productTypeSelect.addEventListener("change", applyFilters);
+        brandInput.addEventListener("input", applyFilters);
+
+    </script>
+
+
+
+
+</body></html>
