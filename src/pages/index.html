@@ -1,11 +1,369 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EcoStore - Produtos Sustentáveis</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Header with Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-leaf"></i> EcoStore
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produtos">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categorias">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel Banner -->
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" style="margin-top: 76px;">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>Produtos 100% Sustentáveis</h1>
+                        <p>Cuide do planeta com estilo. Descubra nossa linha completa de produtos ecológicos.</p>
+                        <button class="btn btn-eco">Explorar Produtos</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>50% OFF em Toda Linha Eco</h1>
+                        <p>Promoção especial por tempo limitado. Sustentabilidade com economia.</p>
+                        <button class="btn btn-eco">Ver Ofertas</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>Frete Grátis Acima de R$ 200</h1>
+                        <p>Entrega sustentável para todo o Brasil. Zero emissão de carbono.</p>
+                        <button class="btn btn-eco">Comprar Agora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products-section" id="produtos">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <p class="section-subtitle">Selecionamos os melhores produtos sustentáveis para você</p>
+            
+            <!-- Categoria: Roupas Sustentáveis -->
+            <h3 class="category-title">
+                <i class="fas fa-tshirt"></i> Roupas Sustentáveis
+            </h3>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">100% Orgânico</div>
+                        <div class="product-image">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Camiseta de Algodão Orgânico</h5>
+                            <p class="product-description">Feita com algodão 100% orgânico, tingimento natural e produção sustentável.</p>
+                            <div class="product-price">R$ 89,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Reciclado</div>
+                        <div class="product-image">
+                            <i class="fas fa-hoodie"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Moletom de Garrafas PET</h5>
+                            <p class="product-description">Confeccionado com material reciclado de garrafas PET. Conforto e sustentabilidade.</p>
+                            <div class="product-price">R$ 149,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Bambu</div>
+                        <div class="product-image">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Tênis de Fibra de Bambu</h5>
+                            <p class="product-description">Calçado esportivo feito com fibra de bambu e sola de borracha natural.</p>
+                            <div class="product-price">R$ 199,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Orgânico</div>
+                        <div class="product-image">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Jaqueta Eco-Friendly</h5>
+                            <p class="product-description">Jaqueta elegante feita com tecidos sustentáveis e design atemporal.</p>
+                            <div class="product-price">R$ 249,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoria: Casa e Decoração -->
+            <h3 class="category-title">
+                <i class="fas fa-home"></i> Casa e Decoração
+            </h3>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Biodegradável</div>
+                        <div class="product-image">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Vaso de Fibra Natural</h5>
+                            <p class="product-description">Vaso decorativo feito com fibras naturais biodegradáveis.</p>
+                            <div class="product-price">R$ 45,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Reciclado</div>
+                        <div class="product-image">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Luminária Solar LED</h5>
+                            <p class="product-description">Iluminação sustentável com energia solar e design moderno.</p>
+                            <div class="product-price">R$ 79,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Madeira de Reflorestamento</div>
+                        <div class="product-image">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Mesa de Centro Sustentável</h5>
+                            <p class="product-description">Mesa artesanal feita com madeira de reflorestamento certificada.</p>
+                            <div class="product-price">R$ 399,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Zero Waste</div>
+                        <div class="product-image">
+                            <i class="fas fa-soap"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Kit Higiene Zero Waste</h5>
+                            <p class="product-description">Kit completo com produtos de higiene sustentáveis e reutilizáveis.</p>
+                            <div class="product-price">R$ 129,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoria: Acessórios Eco -->
+            <h3 class="category-title">
+                <i class="fas fa-shopping-bag"></i> Acessórios Eco
+            </h3>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Cortiça</div>
+                        <div class="product-image">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Carteira de Cortiça</h5>
+                            <p class="product-description">Carteira elegante e sustentável feita com cortiça natural.</p>
+                            <div class="product-price">R$ 69,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Reutilizável</div>
+                        <div class="product-image">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Ecobag de Algodão</h5>
+                            <p class="product-description">Bolsa reutilizável de algodão orgânico para suas compras sustentáveis.</p>
+                            <div class="product-price">R$ 29,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Inox</div>
+                        <div class="product-image">
+                            <i class="fas fa-bottle-water"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Garrafa Térmica Inox</h5>
+                            <p class="product-description">Garrafa reutilizável de aço inoxidável com isolamento térmico.</p>
+                            <div class="product-price">R$ 89,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card product-card position-relative">
+                        <div class="eco-badge">Bambu</div>
+                        <div class="product-image">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="card-body product-body">
+                            <h5 class="product-title">Capa de Celular de Bambu</h5>
+                            <p class="product-description">Proteção sustentável para seu smartphone com design exclusivo.</p>
+                            <div class="product-price">R$ 39,90</div>
+                            <button class="btn btn-add-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     
+    <script>
+        // Simple cart functionality
+        let cartCount = 3;
+        
+        // Add to cart functionality
+        document.querySelectorAll('.btn-add-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                cartCount++;
+                document.querySelector('.cart-badge').textContent = cartCount;
+                
+                // Visual feedback
+                this.innerHTML = '<i class="fas fa-check"></i> Adicionado!';
+                this.style.backgroundColor = 'var(--dark-green)';
+                
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-cart-plus"></i> Adicionar ao Carrinho';
+                    this.style.backgroundColor = 'var(--jade-green)';
+                }, 2000);
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
