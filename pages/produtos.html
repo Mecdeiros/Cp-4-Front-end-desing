@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - E-commerce</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+
+
+   /* Header Styles */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: var(--jade-green) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--jade-green) !important;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 1.5rem;
+            color: var(--jade-green);
+            margin-left: 20px;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--jade-green);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+        .product-image {
+            max-width: 100%;
+            height: 400px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .brand-badge {
+            background-color: #1a551d;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .category-badge {
+            background-color: #6c757d;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .back-btn {
+            margin-bottom: 20px;
+        }
+        .add-to-cart-btn {
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border-radius: 50px;
+        }
+        .product-features {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .feature-icon {
+            color: #28a745;
+            margin-right: 10px;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+
+     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-leaf"></i> EcoStore
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produtos">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categorias">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container mt-4">
+        <!-- Botão Voltar -->
+        <div class="back-btn">
+            <button class="btn btn-outline-secondary" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i> Voltar aos Produtos
+            </button>
+        </div>
+
+        <!-- Conteúdo do Produto -->
+        <div class="row" id="productContent">
+            <!-- Conteúdo será carregado dinamicamente -->
+        </div>
+
+        <!-- Produtos Relacionados -->
+        <div class="mt-5">
+            <h3>Produtos Relacionados</h3>
+            <div class="row" id="relatedProducts">
+                <!-- Produtos relacionados serão carregados dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dados dos produtos (mesmos do shop.html)
+        const products = [
+            {
+                id: 1,
+                name: "Sabonete artesanal",
+                price: 20.00,
+                type: "Limpeza",
+                brand: "EcoClean",
+                image: "../assets/imgs/sabonetee.webp",
+                description: "Sabonete artesanal feito com ingredientes naturais e orgânicos. Livre de parabenos e sulfatos, ideal para todos os tipos de pele. Produzido de forma sustentável com embalagem biodegradável.",
+                features: [
+                    "100% ingredientes naturais",
+                    "Livre de parabenos e sulfatos",
+                    "Embalagem biodegradável",
+                    "Ideal para peles sensíveis",
+                    "Produção artesanal"
+                ]
+            },
+            {
+                id: 2,
+                name: "Camiseta Algodão",
+                price: 80.00,
+                type: "Roupas",
+                brand: "EcoWear",
+                image: "../assets/imgs/camis.webp",
+                description: "Camiseta 100% algodão orgânico, tingida com corantes naturais. Confortável, respirável e produzida de forma ética. Disponível em várias cores e tamanhos.",
+                features: [
+                    "100% algodão orgânico",
+                    "Corantes naturais",
+                    "Produção ética",
+                    "Respirável e confortável",
+                    "Várias cores disponíveis"
+                ]
+            },
+            {
+                id: 3,
+                name: "Talheres de bambu",
+                price: 15.00,
+                type: "Casa",
+                brand: "EcoTools",
+                image: "../assets/imgs/bambu.png",
+                description: "Conjunto de talheres feitos de bambu sustentável. Leves, duráveis e biodegradáveis. Perfeitos para piqueniques, viagens ou uso diário. Inclui garfo, faca, colher e canudo.",
+                features: [
+                    "Bambu 100% sustentável",
+                    "Biodegradável",
+                    "Leve e durável",
+                    "Conjunto completo",
+                    "Ideal para viagens"
+                ]
+            },
+            {
+                id: 4,
+                name: "Sacola ecológica",
+                price: 10.00,
+                type: "Acessórios",
+                brand: "EcoTools",
+                image: "../assets/imgs/sacola.webp",
+                description: "Sacola reutilizável feita de algodão orgânico. Resistente, lavável e com grande capacidade. Substitui centenas de sacolas plásticas, contribuindo para um planeta mais limpo.",
+                features: [
+                    "Algodão orgânico",
+                    "Reutilizável e lavável",
+                    "Grande capacidade",
+                    "Substitui sacolas plásticas",
+                    "Contribui para o meio ambiente"
+                ]
+            },
+            {
+                id: 5,
+                name: "Fralda ecológica",
+                price: 30.00,
+                type: "Roupas",
+                brand: "EcoWear",
+                image: "../assets/imgs/fraldaa.png",
+                description: "Fralda reutilizável feita com tecidos naturais e absorventes. Hipoalergênica, confortável e econômica. Reduz significativamente o impacto ambiental comparado às fraldas descartáveis.",
+                features: [
+                    "Tecidos naturais",
+                    "Hipoalergênica",
+                    "Reutilizável e econômica",
+                    "Confortável para bebês",
+                    "Reduz impacto ambiental"
+                ]
+            },
+            {
+                id: 6,
+                name: "LavaLouças ecológico",
+                price: 60.00,
+                type: "Casa",
+                brand: "EcoClean",
+                image: "../assets/imgs/lavalouça.png",
+                description: "Detergente biodegradável para lavar louças. Fórmula concentrada com ingredientes naturais. Remove gordura eficientemente sem agredir o meio ambiente ou suas mãos.",
+                features: [
+                    "Fórmula biodegradável",
+                    "Ingredientes naturais",
+                    "Remove gordura eficientemente",
+                    "Não agride as mãos",
+                    "Concentrado e econômico"
+                ]
+            },
+            {
+                id: 7,
+                name: "Bolsa térmica ecológica",
+                price: 50.00,
+                type: "Acessórios",
+                brand: "EcoWear",
+                image: "../assets/imgs/bolsatérmicaecológica.png",
+                description: "Bolsa térmica feita com materiais reciclados e isolamento natural. Mantém alimentos quentes ou frios por horas. Perfeita para trabalho, escola ou passeios.",
+                features: [
+                    "Materiais reciclados",
+                    "Isolamento natural",
+                    "Mantém temperatura por horas",
+                    "Perfeita para viagens",
+                    "Design prático e elegante"
+                ]
+            },
+            {
+                id: 8,
+                name: "Canudos reutilizáveis",
+                price: 40.00,
+                type: "Casa",
+                brand: "EcoTools",
+                image: "../assets/imgs/canudo.png",
+                description: "Conjunto de canudos reutilizáveis feitos de aço inoxidável. Inclui escova para limpeza e estojo para transporte. Duráveis, higiênicos e livres de BPA.",
+                features: [
+                    "Aço inoxidável",
+                    "Inclui escova de limpeza",
+                    "Estojo para transporte",
+                    "Livre de BPA",
+                    "Duráveis e higiênicos"
+                ]
+            }
+        ];
+
+        // Função para obter parâmetros da URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Função para carregar detalhes do produto
+        function loadProductDetails() {
+            const productId = parseInt(getUrlParameter('id'));
+            const product = products.find(p => p.id === productId);
+
+            if (!product) {
+                document.getElementById('productContent').innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-danger">
+                            <h4>Produto não encontrado!</h4>
+                            <p>O produto solicitado não foi encontrado em nosso catálogo.</p>
+                            <a href="shop.html" class="btn btn-primary">Voltar à loja</a>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            // Renderizar detalhes do produto
+            document.getElementById('productContent').innerHTML = `
+                <div class="col-md-6">
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                </div>
+                <div class="col-md-6 product-info">
+                    <div class="mb-3">
+                        <span class="brand-badge me-2">${product.brand}</span>
+                        <span class="category-badge">${product.type}</span>
+                    </div>
+                    <h1 class="mb-3">${product.name}</h1>
+                    <div class="price mb-4">R$ ${product.price.toFixed(2)}</div>
+                    <p class="lead mb-4">${product.description}</p>
+                    
+                    <div class="product-features">
+                        <h5 class="mb-3"><i class="fas fa-star text-warning"></i> Características</h5>
+                        ${product.features.map(feature => `
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span>${feature}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="mt-4">
+                        <button class="btn btn-success add-to-cart-btn w-100" onclick="addToCart(${product.id})">
+                            <i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            // Carregar produtos relacionados
+            loadRelatedProducts(product);
+        }
+
+        // Função para carregar produtos relacionados
+        function loadRelatedProducts(currentProduct) {
+            const relatedProducts = products
+                .filter(p => p.id !== currentProduct.id && (p.type === currentProduct.type || p.brand === currentProduct.brand))
+                .slice(0, 3);
+
+            if (relatedProducts.length === 0) {
+                document.getElementById('relatedProducts').innerHTML = `
+                    <div class="col-12">
+                        <p class="text-muted">Nenhum produto relacionado encontrado.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            document.getElementById('relatedProducts').innerHTML = relatedProducts.map(product => `
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}" style="height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="card-title">${product.name}</h6>
+                            <p class="card-text text-success fw-bold">R$ ${product.price.toFixed(2)}</p>
+                            <a href="produtos.html?id=${product.id}" class="btn btn-outline-primary mt-auto">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Função para adicionar ao carrinho
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            alert(`${product.name} foi adicionado ao carrinho!\nPreço: R$ ${product.price.toFixed(2)}`);
+        }
+
+        // Carregar detalhes quando a página carregar
+        document.addEventListener('DOMContentLoaded', loadProductDetails);
+    </script>
+</body>
+</html>
+
