@@ -46,7 +46,6 @@ main {
     color: var(--jade-green) !important;
 }
 
-
 .principal {
     margin-top: 8%;
     text-align: center;
@@ -85,7 +84,7 @@ footer {
     background-color: #212529;
     color: #f8f9fa;
     padding: 3rem 0;
-    margin-top: 3rem; /* Espaçamento extra acima do footer */
+    margin-top: 3rem;
 }
 
 footer .container {
@@ -93,18 +92,17 @@ footer .container {
     padding-top: 3rem;
 }
 
-
 footer h5 {
     color: #f8f9fa;
-    margin-bottom: 1.5rem; /* Aumenta o espaçamento abaixo dos títulos */
+    margin-bottom: 1.5rem;
 }
 
 footer .nav-link {
     color: #adb5bd !important;
     transition: color 0.3s ease;
-    padding-left: 0 !important; /* Remove padding padrão do Bootstrap para links de lista */
+    padding-left: 0 !important;
     display: flex;
-    align-items: center; /* Alinha ícones e texto verticalmente */
+    align-items: center;
 }
 
 footer .nav-link:hover {
@@ -115,15 +113,11 @@ footer .text-white-50 {
     color: #adb5bd !important;
 }
 
-/* Estilos para os ícones */
 footer .fa-brands, footer .fa-solid {
-    font-size: 1.2em; /* Aumenta o tamanho dos ícones */
-    margin-right: 0.5rem; /* Espaçamento entre ícone e texto */
-    /* Ajuste de cor para melhor contraste, se necessário */
-    /* Exemplo: filter: brightness(1.2); para clarear um pouco */
+    font-size: 1.2em;
+    margin-right: 0.5rem;
 }
 
-/* Ajustes específicos para ícones de redes sociais se o contraste for um problema */
 footer .fa-linkedin, footer .fa-youtube {
-    color: #f8f9fa; /* Garante que sejam brancos para alto contraste */
+    color: #f8f9fa;
 }
