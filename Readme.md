@@ -33,3 +33,9 @@ Todos os direitos reservados.
 ## Contato
 
 Para mais informações, utilize a **página de contatos** disponível no próprio site.
+
+
+## Integrantes
+Guilherme de Medeiros RM 561699
+Felipe Ramalho Junqueira Berto RM 562148
+Victor Pucci Ferreira RM 561736
