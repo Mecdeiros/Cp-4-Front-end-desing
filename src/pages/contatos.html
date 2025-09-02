@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="..//css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="../../index.html">
+                    <i class="fas fa-leaf"></i> EcoStore
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="testeshop.html">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <div class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="contato1">
+            <section class="principal">
+                <h1>Entre em contato!</h1>
+                <p>Preencha todos os campos</p>
+                <hr class="col-3 col-md-2 mb-5">
+            </section>
+
+            <div class="container mt-5">
+                <h2></h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="name" placeholder="Seu nome" required="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="seu.email@example.com"
+                            required="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Assunto</label>
+                        <input type="text" class="form-control" id="subject" placeholder="Assunto da mensagem"
+                            required="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mensagem</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Sua mensagem"
+                            required=""></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" class="botao">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <footer class="py-5">
+    <div class="container">
+       <div class="row justify-content-between">
+            <div class="col-12 col-sm-6 col-md-3 mb-3 d-flex flex-column align-items-start">
+                <a href="/" class="d-flex align-items-center mb-3 link-light text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <span class="fs-4 text-white"><a class="navbar-brand" href="../../index.html">
+                    <i class="fas fa-leaf"></i> EcoStore
+                </a></span>
+                </a>
+                <p class="text-white-50">© 2025 EcoStore. Todos os direitos reservados.</p>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-2 mb-3">
+                <h5 class="text-white">Redes Sociais</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Facebook <i class="fa-brands fa-facebook"></i></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Twitter <i class="fa-brands fa-twitter"></i></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Instagram <i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Linkedin <i class="fa-brands fa-linkedin"></i></a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Youtube <i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-2 mb-3">
+                <h5 class="text-white">Contatos</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50"><i class="fa-brands fa-whatsapp"></i>+55 11 91234-5678</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50"><i class="fa-solid fa-phone"></i> +55 11 3344-5566</a></li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-2 mb-3">
+                <h5 class="text-white">Políticas da loja</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="politica-privacidade.html" class="nav-link p-0 text-white-50">Política de Privacidade</a></li>
+                    <li class="nav-item mb-2"><a href="politica-troca.html" class="nav-link p-0 text-white-50">Troca e Devolução</a></li>
+                    <li class="nav-item mb-2"><a href="politica-frete.html" class="nav-link p-0 text-white-50">Frete e Entrega</a></li>
+                    <li class="nav-item mb-2"><a href="termos-uso.html" class="nav-link p-0 text-white-50">Termos de Uso</a></li>
+                    <li class="nav-item mb-2"><a href="contato.html" class="nav-link p-0 text-white-50">Contato</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</footer>
+        </div>
+    </main>
+</body>
+
+</html>
