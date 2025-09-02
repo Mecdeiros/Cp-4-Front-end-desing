@@ -39,3 +39,6 @@ Para mais informações, utilize a **página de contatos** disponível no própr
 Guilherme de Medeiros RM 561699
 Felipe Ramalho Junqueira Berto RM 562148
 Victor Pucci Ferreira RM 561736
+
+Gravação Linkedin
+https://www.linkedin.com/posts/felipe-ramalho-29461434a_site-feito-pelo-felipe-ramalho-guilherme-activity-7368476297381048320-Nf6z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFdM1ZABGeQaaOMPR7ZvBekwsUioKUfZONw
